@@ -1,0 +1,33 @@
+{
+  "name": "@stdlib/math-base-special-expit",
+  "version": "0.0.0",
+  "description": "Standard logistic function.",
+  "license": "Apache-2.0",
+  "main": "./bundle.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/math-base-special-expit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdmath",
+    "mathematics",
+    "math",
+    "logit",
+    "inverse",
+    "expit",
+    "logistic",
+    "proportion",
+    "log-odds",
+    "sigmoid",
+    "special"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
