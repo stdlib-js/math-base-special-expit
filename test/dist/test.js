@@ -31,8 +31,8 @@ var expit = require( './../../dist' );
 
 // FIXTURES //
 
-var positive = require( './../..xtures/python/positive.json' );
-var negative = require( './../..xtures/python/negative.json' );
+var positive = require( './../fixtures/python/positive.json' );
+var negative = require( './../fixtures/python/negative.json' );
 
 
 // TESTS //
