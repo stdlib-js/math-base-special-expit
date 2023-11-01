@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2019 The Stdlib Authors.
+* Copyright (c) 2023 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,94 +21,13 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var isnan = require( '@stdlib/math-base-assert-is-nan' );
-var PINF = require( '@stdlib/constants-float64-pinf' );
-var NINF = require( '@stdlib/constants-float64-ninf' );
-var EPS = require( '@stdlib/constants-float64-eps' );
-var abs = require( '@stdlib/math-base-special-abs' );
-var expit = require( './../../dist' );
-
-
-// FIXTURES //
-
-var positive = require( './../fixtures/python/positive.json' );
-var negative = require( './../fixtures/python/negative.json' );
+var main = require( './../../dist' );
 
 
 // TESTS //
 
-tape( 'main export is a function', function test( t ) {
+tape( 'main export is defined', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof expit, 'function', 'main export is a function' );
-	t.end();
-});
-
-tape( 'the function returns `NaN` when provided `NaN`', function test( t ) {
-	var y = expit( NaN );
-	t.equal( isnan( y ), true, 'returns NaN' );
-	t.end();
-});
-
-tape( 'the function returns `0.5` when provided `0`', function test( t ) {
-	var y = expit( 0.0 );
-	t.equal( y, 0.5, 'returns 0.5' );
-	t.end();
-});
-
-tape( 'the function returns `1.0` when provided `+Infinity`', function test( t ) {
-	var y = expit( PINF );
-	t.equal( y, 1.0, 'returns 1.0' );
-	t.end();
-});
-
-tape( 'the function returns `0.0` when provided `-Infinity`', function test( t ) {
-	var y = expit( NINF );
-	t.equal( y, 0.0, 'returns 0.0' );
-	t.end();
-});
-
-tape( 'the function evaluates the standard logistic function for negative numbers', function test( t ) {
-	var expected;
-	var delta;
-	var tol;
-	var x;
-	var y;
-	var i;
-
-	expected = negative.expected;
-	x = negative.x;
-	for ( i = 0; i < x.length; i++ ) {
-		y = expit( x[i] );
-		if ( y === expected[i] ) {
-			t.equal( y, expected[i], 'x: '+x[i]+', y: '+y+', expected: '+expected[i] );
-		} else {
-			delta = abs( y - expected[i] );
-			tol = 1.5 * EPS * abs( expected[i] );
-			t.ok( delta <= tol, 'within tolerance. x: '+x[i]+'. v: '+y+'. E: '+expected[i]+' Δ: '+delta+'. tol: '+tol );
-		}
-	}
-	t.end();
-});
-
-tape( 'the function evaluates the standard logistic function for positive numbers', function test( t ) {
-	var expected;
-	var delta;
-	var tol;
-	var x;
-	var y;
-	var i;
-
-	expected = positive.expected;
-	x = positive.x;
-	for ( i = 0; i < x.length; i++ ) {
-		y = expit( x[i] );
-		if ( y === expected[i] ) {
-			t.equal( y, expected[i], 'x: '+x[i]+', y: '+y+', expected: '+expected[i] );
-		} else {
-			delta = abs( y - expected[i] );
-			tol = 1.5 * EPS * abs( expected[i] );
-			t.ok( delta <= tol, 'within tolerance. x: '+x[i]+'. v: '+y+'. E: '+expected[i]+' Δ: '+delta+'. tol: '+tol );
-		}
-	}
+	t.strictEqual( main !== void 0, true, 'main export is defined' );
 	t.end();
 });
