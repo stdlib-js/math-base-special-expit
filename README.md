@@ -56,14 +56,32 @@ The [standard logistic][logistic-function] function, also called the expit funct
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-expit
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import expit from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@esm/index.mjs';
+var expit = require( '@stdlib/math-base-special-expit' );
 ```
 
 #### expit( x )
@@ -97,14 +115,9 @@ v = expit( NaN );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
-import expit from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@esm/index.mjs';
+```javascript
+var randu = require( '@stdlib/random-base-randu' );
+var expit = require( '@stdlib/math-base-special-expit' );
 
 var x;
 var i;
@@ -113,10 +126,6 @@ for ( i = 0; i < 100; i++ ) {
     x = randu();
     console.log( 'expit(%d) = %d', x, expit( x ) );
 }
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -125,7 +134,93 @@ for ( i = 0; i < 100; i++ ) {
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/math/base/special/expit.h"
+```
+
+#### stdlib_base_expit( x )
+
+Computes the [standard logistic][logistic-function] function.
+
+```c
+double out = stdlib_base_expit( 0.0 );
+// returns ~0.5
+
+out = stdlib_base_expit( 1.0 );
+// returns ~0.731
+```
+
+The function accepts the following arguments:
+
+-   **x**: `[in] double` input value.
+
+```c
+double stdlib_base_expit( const double x );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/math/base/special/expit.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+int main( void ) {
+    double x;
+    double v;
+    int i;
+    
+    for ( i = 0; i < 100; i++ ) {
+        x = (double)rand() / (double)RAND_MAX;
+        v = stdlib_base_expit( x );
+        printf( "expit(%lf) = %lf\n", x, v );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -151,7 +246,7 @@ for ( i = 0; i < 100; i++ ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -205,8 +300,11 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 [es-module]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
 [deno-url]: https://github.com/stdlib-js/math-base-special-expit/tree/deno
+[deno-readme]: https://github.com/stdlib-js/math-base-special-expit/blob/deno/README.md
 [umd-url]: https://github.com/stdlib-js/math-base-special-expit/tree/umd
+[umd-readme]: https://github.com/stdlib-js/math-base-special-expit/blob/umd/README.md
 [esm-url]: https://github.com/stdlib-js/math-base-special-expit/tree/esm
+[esm-readme]: https://github.com/stdlib-js/math-base-special-expit/blob/esm/README.md
 [branches-url]: https://github.com/stdlib-js/math-base-special-expit/blob/main/branches.md
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/math-base-special-expit/main/LICENSE
@@ -215,9 +313,9 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/exp]: https://github.com/stdlib-js/math-base-special-exp/tree/esm
+[@stdlib/math/base/special/exp]: https://github.com/stdlib-js/math-base-special-exp
 
-[@stdlib/math/base/special/logit]: https://github.com/stdlib-js/math-base-special-logit/tree/esm
+[@stdlib/math/base/special/logit]: https://github.com/stdlib-js/math-base-special-logit
 
 <!-- </related-links> -->
 
