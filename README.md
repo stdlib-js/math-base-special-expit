@@ -65,6 +65,11 @@ The [standard logistic][logistic-function] function, also called the expit funct
 To use in Observable,
 
 ```javascript
+expit = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@umd/browser.js' )
+```
+The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-expit/tags). For example,
+
+```javascript
 expit = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@v0.2.2-umd/browser.js' )
 ```
 
@@ -77,7 +82,7 @@ var expit = require( 'path/to/vendor/umd/math-base-special-expit/index.js' )
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@v0.2.2-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -126,7 +131,7 @@ v = expit( NaN );
 <html lang="en">
 <body>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@v0.2.2-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
