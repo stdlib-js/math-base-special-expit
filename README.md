@@ -63,7 +63,7 @@ The [standard logistic][logistic-function] function, also called the expit funct
 ## Usage
 
 ```javascript
-import expit from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@deno/mod.js';
+import expit from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@v0.2.3-deno/mod.js';
 ```
 
 #### expit( x )
@@ -99,7 +99,7 @@ v = expit( NaN );
 
 ```javascript
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
-import expit from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@deno/mod.js';
+import expit from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-expit@v0.2.3-deno/mod.js';
 
 var x;
 var i;
